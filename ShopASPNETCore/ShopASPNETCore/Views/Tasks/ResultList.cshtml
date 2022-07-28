@@ -1,0 +1,22 @@
+﻿<h2>Все задачи</h2>
+<h3>@Model.curList</h3>
+<div class="list-group w-auto">
+@{
+    foreach(var tas in Model.allTasks)
+    {
+        //<div class="col lg-4">
+        //    <h2>Задача: @tas.Text</h2>
+        //    <p>Время дедлайна: @tas.DeadlineDate.ToString()</p>
+        //</div>
+        <label class="list-group-item d-flex gap-3">
+          <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="" style="font-size: 1.375em;">
+          <span class="pt-1 form-checked-content">
+            <strong>@tas.Text</strong>
+            <small class="d-block text-muted">
+              Время дедлайна: @tas.DeadlineDate.ToString()
+            </small>
+          </span>
+        </label>
+    }
+}
+</div>

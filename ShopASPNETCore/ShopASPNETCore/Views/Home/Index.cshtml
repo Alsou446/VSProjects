@@ -1,0 +1,12 @@
+﻿@using ShopASPNETCore.Data.Models
+@model HomeViewModel
+
+<h1>Все списки задач</h1>
+<div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
+    @{
+        foreach(TasksList lst in Model.allLists)
+        {
+            @Html.Partial("ListObjForHome", lst);
+        }
+    }
+</div>
