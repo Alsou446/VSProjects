@@ -9,10 +9,10 @@ namespace ShopASPNETCore.Data.Mocks
         public IEnumerable<TasksList> AllTasksLists
         {
             get { return new List<TasksList> {
-                new TasksList { Id = 1, Name = "Задачи на понедельник"},
-                new TasksList { Id = 2, Name = "Задачи на вторник"},
-                new TasksList { Id = 3, Name = "Задачи на среду"},
-                new TasksList { Id = 4, Name = "Задачи на четверг"}};
+                new TasksList { Id = 1, ListName = "Задачи на понедельник"},
+                new TasksList { Id = 2, ListName = "Задачи на вторник"},
+                new TasksList { Id = 3, ListName = "Задачи на среду"},
+                new TasksList { Id = 4, ListName = "Задачи на четверг"}};
             }
         }
 

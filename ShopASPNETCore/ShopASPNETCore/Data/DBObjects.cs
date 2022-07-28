@@ -35,16 +35,16 @@ namespace ShopASPNETCore.Data
                 {
                     var list = new TasksList[]
                     {
-                        new TasksList { Name = "Задачи на понедельник"},
-                        new TasksList { Name = "Задачи на вторник"},
-                        new TasksList { Name = "Задачи на среду"},
-                        new TasksList { Name = "Задачи на четверг"}
+                        new TasksList { Name = "Задачи на понедельник", ListName = "Monday"},
+                        new TasksList { Name = "Задачи на вторник", ListName = "Tuesday"},
+                        new TasksList { Name = "Задачи на среду", ListName = "Wednesday"},
+                        new TasksList { Name = "Задачи на четверг", ListName = "Thursday"}
                     };
 
                     tsklist = new Dictionary<string, TasksList>();
                     foreach(TasksList el in list)
                     {
-                        tsklist.Add(el.Name, el);
+                        tsklist.Add(el.ListName, el);
                     }
                 }
 
@@ -63,14 +63,14 @@ namespace ShopASPNETCore.Data
                     var list = new Task[]
                     {
 
-                        new Task { Text = "Понедельник1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Задачи на понедельник"]},
-                        new Task { Text = "Понедельник2", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Задачи на понедельник"]},
-                        new Task { Text = "Понедельник3", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Задачи на понедельник"]},
-                        new Task { Text = "Понедельник4", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Задачи на понедельник"]},
-                        new Task { Text = "Вторник1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Задачи на вторник"]},
-                        new Task { Text = "Среда1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Задачи на среду"]},
-                        new Task { Text = "Среда2", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Задачи на четверг"]},
-                        new Task { Text = "Четверг1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList = tsklist["Задачи на четверг"]}
+                        new Task { Text = "Понедельник1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Monday"]},
+                        new Task { Text = "Понедельник2", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Monday"]},
+                        new Task { Text = "Понедельник3", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Monday"]},
+                        new Task { Text = "Понедельник4", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Monday"]},
+                        new Task { Text = "Вторник1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Tuesday"]},
+                        new Task { Text = "Среда1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Wednesday"]},
+                        new Task { Text = "Среда2", DeadlineDate = System.DateTime.Now, Checked = false, TasksList =  tsklist["Wednesday"]},
+                        new Task { Text = "Четверг1", DeadlineDate = System.DateTime.Now, Checked = false, TasksList = tsklist["Thursday"]}
 
                     };
 

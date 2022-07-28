@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopASPNETCore.Data.Interfaces;
+using ShopASPNETCore.Data.Models;
 using ShopASPNETCore.ViewModels;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ShopASPNETCore.Controllers
 {
@@ -15,8 +18,24 @@ namespace ShopASPNETCore.Controllers
             _allTasksLists = lists;
         }
 
-        public ViewResult ResultList ()
+        [Route("Tasks/ResultList")]
+        [Route("Tasks/ResultList/{tskListName}")]
+
+        public ViewResult ResultList (string tskListName)
         {
+            string _tskListName = tskListName;
+            IEnumerable<Task> tasks = null;
+            string currList = "";
+            if(string.IsNullOrEmpty(tskListName))
+            {
+                tasks = _allTasks.AllTasks.OrderBy(i => i.Id);
+            }
+            else
+            {
+                tasks = _allTasks.AllTasks.Where(i => i.TasksList.ListName.Equals(tskListName)).OrderBy(i => i.Id);
+            }
+
+
             ViewBag.Title = "Страница с задачами";
             SpisokViewModel spsokViewModel = new SpisokViewModel();
             spsokViewModel.allTasks = _allTasks.AllTasks;
