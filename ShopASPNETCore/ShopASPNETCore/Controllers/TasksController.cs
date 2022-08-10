@@ -25,22 +25,31 @@ namespace ShopASPNETCore.Controllers
         {
             string _tskListName = tskListName;
             IEnumerable<Task> tasks = null;
-            string currList = "";
+            TasksList currList = _allTasksLists.AllTasksLists.First(i => i.ListName.Equals(_tskListName));
             if(string.IsNullOrEmpty(tskListName))
             {
                 tasks = _allTasks.AllTasks.OrderBy(i => i.Id);
             }
             else
             {
-                tasks = _allTasks.AllTasks.Where(i => i.TasksList.ListName.Equals(tskListName)).OrderBy(i => i.Id);
+                //if (string.Equals("Monday", _tskListName, System.StringComparison.OrdinalIgnoreCase))
+                    tasks = _allTasks.AllTasks.Where(i => i.TasksList.ListName.Equals(tskListName)).OrderBy(i => i.Id);
             }
 
 
+            var tskObj = new SpisokViewModel
+            {
+                allTasks = tasks,
+                curList = currList.Name,
+            };
+
+
             ViewBag.Title = "Страница с задачами";
-            SpisokViewModel spsokViewModel = new SpisokViewModel();
-            spsokViewModel.allTasks = _allTasks.AllTasks;
-            spsokViewModel.curList = "Задачи";
-            return View(spsokViewModel);
+            //SpisokViewModel spsokViewModel = new SpisokViewModel();
+            //spsokViewModel.allTasks = _allTasks.AllTasks;
+            //spsokViewModel.curList = "Задачи";
+            //return View(spsokViewModel);
+             return View(tskObj);
         }
     }
 }
