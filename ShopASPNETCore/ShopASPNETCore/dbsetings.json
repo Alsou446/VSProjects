@@ -1,5 +1,10 @@
+//{
+//  "ConnectionStrings": {
+//    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=AlsouDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+//  }
+//}
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=AlsouDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Data Source=AlsouDB"
   }
 }

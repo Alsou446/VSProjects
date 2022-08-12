@@ -28,7 +28,8 @@ namespace ShopASPNETCore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDBContent>(option => option.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<AppDBContent>(option => option.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDBContent>(option => option.UseSqlite(_confString.GetConnectionString("DefaultConnection")));
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddTransient<IAllTasks, TaskRepository>();
             services.AddTransient<IAllTasksLists, TasksListRepository>();
@@ -45,13 +46,15 @@ namespace ShopASPNETCore
             {
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{Id?}");
                 routes.MapRoute(name: "curTasksList", template: "Tasks/ResultList/{tskListName?}");
+                routes.MapRoute(name: "TasksListAdd", template: "TasksListAdd/AddList");
+                routes.MapRoute(name: "TaskAdd", template: "Add/TaskAdd/");
             });
 
-            using (var scope = app.ApplicationServices.CreateScope())
-            {
-                AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>(); //подключение к БД
-                DBObjects.Initial(content);
-            }
+            //using (var scope = app.ApplicationServices.CreateScope())
+            //{
+            //    AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>(); //подключение к БД
+            //    DBObjects.Initial(content);
+            //}
         }
     }
 }

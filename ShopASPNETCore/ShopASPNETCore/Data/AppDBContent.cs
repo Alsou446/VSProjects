@@ -8,7 +8,7 @@ namespace ShopASPNETCore.Data
     {
         public AppDBContent(DbContextOptions<AppDBContent> options) : base(options) //конструктор по умолчанию, данные передаём в базовый конструктор
         {
-            
+            Database.EnsureCreated();
         }
 
         public DbSet<Task> Task { get; set; } //все задачи
