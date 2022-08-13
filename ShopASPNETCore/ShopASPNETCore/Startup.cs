@@ -46,8 +46,7 @@ namespace ShopASPNETCore
             {
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{Id?}");
                 routes.MapRoute(name: "curTasksList", template: "Tasks/ResultList/{tskListName?}");
-                routes.MapRoute(name: "TasksListAdd", template: "TasksListAdd/AddList");
-                routes.MapRoute(name: "TaskAdd", template: "Add/TaskAdd/");
+                routes.MapRoute(name: "TasksListAdd", template: "TasksList/AddList");
             });
 
             //using (var scope = app.ApplicationServices.CreateScope())

@@ -1,16 +1,16 @@
 ﻿@using ShopASPNETCore.Data.Models
 @model HomeViewModel
 
-<div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
+<div class="list-group list-group-checkable d-grid gap-2">
     @{
         foreach(TasksList lst in Model.allLists)
         {
-            @Html.Partial("ListObjForHome", lst);
+                    @Html.Partial("ListObjForHome", lst);
         }
     }
+    <div >
+        <a asp-controller="TasksList" asp-action="AddList" class="btn btn-primary w-50">Добавить новый список задач</a>
+    </div>
 </div>
+ 
 
-<div >
-    <br />
-    <a asp-controller="TasksListAdd" asp-action="AddList" class="btn btn-primary w-50">Добавить новый список задач</a>
-</div>           
