@@ -1,23 +1,24 @@
-﻿@model ShopASPNETCore.Data.Models.TasksList
+﻿@model ShopASPNETCore.Data.Models.Task
 
-<form asp-controller="TasksList" asp-action="AddList" class="need-validation" method="post">
+<form asp-controller="Tasks" asp-action="AddTask" class="need-validation" method="post">
     <div class="col-md-7 col-lg-8">
 
-        <h4 class="mb-3">Введите инофрмацию о списке задач</h4>
+        <h4 class="mb-3">Введите инофрмацию о задаче</h4>
 
         <div class="row g-3">
             <div class="col-sm-6">
                 <label class="form-label">Название</label>
-                <input type="text" class="form-control" id="Name" asp-for="Name" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="Name" asp-for="Text" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                     Название занято.
                 </div>
             </div>
         </div>
+        
         <div class="row g-3">
             <div class="col-sm-6">
-                <label class="form-label">Название на англ.</label>
-                <input type="text" class="form-control" id="ListName" asp-for="ListName" placeholder="" value="" required="">
+                <label class="form-label">Дедлайн</label>
+                <input type="datetime" class="form-control" id="DeadlineDate" asp-for="DeadlineDate" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                     Название занято.
                 </div>

@@ -7,6 +7,6 @@ namespace ShopASPNETCore.ViewModels
     {
         public IEnumerable<Task> allTasks { get; set; }
 
-        public string curList { get; set; }
+        public TasksList curList { get; set; }
     }
 }

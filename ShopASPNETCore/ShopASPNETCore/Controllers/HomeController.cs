@@ -27,17 +27,7 @@ namespace ShopASPNETCore.Controllers
                 allLists = _tskRep.AllTasksLists
             };
             return View(homeLists);
-            //var allLists = _tskRep.AllTasksLists;
-            //return View("Index2", allLists);
 
         }
-
-        //public IActionResult DelList(Guid id)
-        //{
-        //    var listtasks = _tskRep.AllTasksLists.FirstOrDefault(i => i.Id.Equals(id));
-        //    _appDBContent.TaskList.Remove(listtasks);
-        //    _appDBContent.SaveChanges();
-        //    return View("Index2");
-        //}
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-<h3>@Model.curList</h3>
+<h3>@Model.curList.Name</h3>
 <div class="list-group w-auto">
 @{
     foreach(var tas in Model.allTasks)
@@ -18,5 +18,9 @@
           </span>
         </label>
     }
+
+    <div>
+        <a asp-controller="Tasks" asp-action="AddTask" asp-route-curlist="@Model.curList" class="btn btn-primary w-50">Добавить новую задачу</a>
+    </div>
 }
 </div>

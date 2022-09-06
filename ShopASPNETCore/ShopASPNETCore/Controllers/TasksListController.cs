@@ -25,6 +25,7 @@ namespace ShopASPNETCore.Controllers
         {
             return View("TasksList");
         }
+
         [HttpPost]
         public ViewResult AddList(TasksList tasksList)
         {
